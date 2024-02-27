@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Form</title>
+</head>
+<body>
+<!-- 値を表示する要素 -->
+    <div id="displayValue"></div>
+
+    <script>
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const value = urlParams.get('errorMessage');
+
+            // ページ内の特定の要素に値を表示
+            const displayElement = document.getElementById('displayValue');
+            displayElement.innerText = value;
+    </script>
+
+<form action="/validateInput" method="post">
+    <input type="text" name="imagePath" placeholder="Enter text">
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

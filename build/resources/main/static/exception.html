@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exception Message</title>
+</head>
+<body>
+<!-- 値を表示する要素 -->
+<p>管理者にお問い合わせ下さい。</p>
+<a href="input.html">入力フォームへ</a>
+<p>エラー内容：</p>
+<div id="stackTrace"></div>
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const stackTrace = urlParams.get('stackTrace');
+
+
+    // ページ内の特定の要素に値を表示
+    const displayElementStackTrace = document.getElementById('stackTrace');
+    displayElementStackTrace.innerText = stackTrace;
+</script>
+</body>
+</html>
